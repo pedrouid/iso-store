@@ -1,18 +1,16 @@
+import localStorage from 'localStorage';
 import { safeJsonParse, safeJsonStringify } from 'safe-json-utils';
-import { getLocalStorage } from 'window-getters';
 
 import { IStore } from './types';
 
 export class Store implements IStore {
-  private storage: Storage | undefined;
+  private storage: Storage = localStorage;
 
-  public async init(): Promise<any> {
-    this.storage = getLocalStorage();
+  public async init(): Promise<void> {
+    return;
   }
 
   public async set<T = any>(key: string, value: T): Promise<void> {
-    if (typeof this.storage === 'undefined')
-      throw new Error('localStorage is not available');
     const item = safeJsonStringify(value);
     if (typeof item !== 'string')
       throw new Error(`Couldn't stringify value for key: ${key}`);
@@ -20,8 +18,6 @@ export class Store implements IStore {
   }
 
   public async get<T = any>(key: string): Promise<T | undefined> {
-    if (typeof this.storage === 'undefined')
-      throw new Error('localStorage is not available');
     const item = this.storage.getItem(key);
     if (!item) throw new Error(`Couldn't get value for key: ${key}`);
     const value = safeJsonParse(item);
@@ -29,8 +25,6 @@ export class Store implements IStore {
   }
 
   public async delete(key: string): Promise<void> {
-    if (typeof this.storage === 'undefined')
-      throw new Error('localStorage is not available');
     this.storage.removeItem(key);
   }
 }

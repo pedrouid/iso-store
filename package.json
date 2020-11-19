@@ -58,7 +58,7 @@
     "trailingComma": "es5"
   },
   "dependencies": {
-    "safe-json-utils": "^1.1.1",
-    "window-getters": "^1.0.1"
+    "localStorage": "^1.0.4",
+    "safe-json-utils": "^1.1.1"
   }
 }
