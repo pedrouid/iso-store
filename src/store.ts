@@ -3,7 +3,7 @@ import { safeJsonParse, safeJsonStringify } from 'safe-json-utils';
 import { IStore } from './types';
 
 export class Store implements IStore {
-  public storage: Storage | undefined;
+  private storage: Storage | undefined;
 
   public async init(): Promise<any> {
     if (typeof window?.localStorage !== 'undefined') {
