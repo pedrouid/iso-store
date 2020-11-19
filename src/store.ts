@@ -1,4 +1,5 @@
 import { safeJsonParse, safeJsonStringify } from 'safe-json-utils';
+import { getLocalStorage } from 'window-getters';
 
 import { IStore } from './types';
 
@@ -6,10 +7,7 @@ export class Store implements IStore {
   private storage: Storage | undefined;
 
   public async init(): Promise<any> {
-    if (typeof window?.localStorage !== 'undefined') {
-      this.storage = window.localStorage;
-    }
-    return;
+    this.storage = getLocalStorage();
   }
 
   public async set<T = any>(key: string, value: T): Promise<void> {
