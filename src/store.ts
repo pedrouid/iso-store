@@ -6,7 +6,7 @@ export class Store implements IStore {
   public storage: Storage | undefined;
 
   public async init(): Promise<any> {
-    if (typeof window.localStorage !== 'undefined') {
+    if (typeof window?.localStorage !== 'undefined') {
       this.storage = window.localStorage;
     }
     return;
