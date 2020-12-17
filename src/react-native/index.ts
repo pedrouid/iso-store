@@ -1,17 +1,18 @@
 import { safeJsonParse, safeJsonStringify } from 'safe-json-utils';
 
 import { IStore, ReactNativeStoreOptions } from '../shared';
-import { IAsyncStorage } from './asyncstorage';
+import { WrappedAsyncStorage } from './wrapper';
 
 // React-Native Store
-export class Store implements IStore<IAsyncStorage> {
-  public storage: IAsyncStorage;
+export class Store implements IStore {
+  public storage: WrappedAsyncStorage;
+
   constructor(opts: ReactNativeStoreOptions) {
-    this.storage = opts.asyncStorage;
+    this.storage = new WrappedAsyncStorage(opts.asyncStorage);
   }
 
   get length(): number {
-    return this.storage.size();
+    return this.storage.
   }
 
   public async init(): Promise<void> {}

@@ -1,9 +1,6 @@
 import merge from 'deepmerge';
 
-import {
-  IAsyncStorage,
-  AsyncStorageTypes,
-} from '../../src/react-native/asyncstorage';
+import { IAsyncStorage, AsyncStorageTypes } from '../../src/react-native/types';
 
 const isStringified = (str: string): boolean => {
   try {
