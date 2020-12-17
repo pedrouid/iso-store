@@ -1,5 +1,9 @@
 import merge from 'deepmerge';
-import { AsyncStorageTypes } from '../../src';
+
+import {
+  IAsyncStorage,
+  AsyncStorageTypes,
+} from '../../src/react-native/asyncstorage';
 
 const isStringified = (str: string): boolean => {
   try {
@@ -87,7 +91,8 @@ class AsyncDict<K, V> {
   }
 }
 
-class MockAsyncStorage extends AsyncDict<string, string> {
+class MockAsyncStorage extends AsyncDict<string, string>
+  implements IAsyncStorage {
   async mergeItem(
     key: string,
     value: string,

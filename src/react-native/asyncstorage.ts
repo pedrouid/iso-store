@@ -65,30 +65,3 @@ export abstract class IAsyncStorage<K = string, V = any> {
 
   public abstract flushGetRequests();
 }
-
-export abstract class IBaseStore {
-  public abstract length: number;
-  public abstract init(): Promise<any>;
-  public abstract set<T = any>(key: string, value: T): Promise<void>;
-  public abstract get<T = any>(key: string): Promise<T | undefined>;
-  public abstract del(key: string): Promise<void>;
-}
-
-export abstract class IStorage<S = any> extends IBaseStore {
-  public abstract store: S;
-}
-
-export interface ReactNativeStoreOptions {
-  asyncStorage: IAsyncStorage;
-}
-export interface NodeJSStoreOptions {
-  uri: string;
-}
-
-export type StoreOptions = ReactNativeStoreOptions | NodeJSStoreOptions;
-export abstract class IStore extends IBaseStore {
-  public abstract storage: IStorage;
-  constructor(type?: string, opts?: StoreOptions) {
-    super();
-  }
-}

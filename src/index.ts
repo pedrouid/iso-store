@@ -1,6 +1,6 @@
-import { Store as S } from './store';
+import S from './node-js';
 
-export * from './types';
+export * from './node-js';
+export * from './shared';
 
-export const Store = S;
 export default S;

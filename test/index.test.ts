@@ -1,16 +1,12 @@
-import Store from '../src';
+import BrowserStore from '../src/browser';
+import ReactNativeStore from '../src/react-native';
 import MockAsyncStorage from './mock/asyncstorage';
 
 describe('IsoStore', () => {
-  it('init', async () => {
-    const store = new Store();
-    await store.init();
-    expect(store).toBeTruthy();
-  });
   it('browser', async () => {
     const key = 'yolo';
     const value = { data: true };
-    const store = new Store();
+    const store = new BrowserStore();
     await store.init();
     await store.set(key, value);
     const result = await store.get<typeof value>(key);
@@ -21,7 +17,7 @@ describe('IsoStore', () => {
   it('react-native', async () => {
     const key = 'yolo';
     const value = { data: true };
-    const store = new Store('react-native', {
+    const store = new ReactNativeStore({
       asyncStorage: new MockAsyncStorage(),
     });
     await store.init();

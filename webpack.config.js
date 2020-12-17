@@ -3,7 +3,8 @@ const path = require('path');
 module.exports = {
   mode: 'production',
   entry: {
-    index: path.resolve(__dirname, 'dist', 'cjs', 'index.js'),
+    // include only browser/index.js for UMD build
+    index: path.resolve(__dirname, 'dist', 'cjs', 'browser', 'index.js'),
   },
   output: {
     path: path.resolve(__dirname, 'dist', 'umd'),
