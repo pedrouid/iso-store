@@ -61,7 +61,6 @@
     "trailingComma": "es5"
   },
   "dependencies": {
-    "localStorage": "^1.0.4",
-    "safe-json-utils": "^1.1.1"
+    "keyvaluestorage": "^0.2.0"
   }
 }

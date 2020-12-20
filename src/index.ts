@@ -1,6 +1,6 @@
-import S from './node-js';
+import S from './store';
 
-export * from './node-js';
-export * from './shared';
+export * from './store';
+export * from './types';
 
 export default S;
