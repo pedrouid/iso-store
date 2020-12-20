@@ -1,6 +1,6 @@
 {
   "name": "@pedrouid/iso-store",
-  "description": "Isomorphic Key-Value Store ",
+  "description": "Isomorphic Key-Value Store",
   "version": "1.0.5",
   "author": "Pedro Gomes <github.com/pedrouid>",
   "license": "MIT",
@@ -18,8 +18,6 @@
   "main": "dist/cjs/index.js",
   "types": "dist/cjs/index.d.ts",
   "unpkg": "dist/umd/index.min.js",
-  "browser": "dist/cjs/browser/index.js",
-  "react-native": "dist/cjs/react-native/index.js",
   "homepage": "https://github.com/pedrouid/iso-store",
   "repository": {
     "type": "git",
@@ -61,6 +59,6 @@
     "trailingComma": "es5"
   },
   "dependencies": {
-    "keyvaluestorage": "^0.2.0"
+    "keyvaluestorage": "^0.3.0"
   }
 }

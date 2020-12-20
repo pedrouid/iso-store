@@ -1,11 +1,14 @@
-import KeyValueStorage, { IKeyValueStorage } from 'keyvaluestorage';
+import KeyValueStorage, {
+  IKeyValueStorage,
+  KeyValueStorageOptions,
+} from 'keyvaluestorage';
 
 import { IStore } from './types';
 
 export class Store implements IStore {
   public storage: IKeyValueStorage;
 
-  constructor(opts?: any) {
+  constructor(opts?: KeyValueStorageOptions) {
     this.storage = new KeyValueStorage(opts);
   }
 
