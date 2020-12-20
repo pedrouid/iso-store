@@ -1,14 +1,17 @@
 import Store from '../src';
 
+export const TEST_NODE_JS_OPTIONS = {
+  // eslint-disable-next-line no-useless-computed-key
+  ['node-js']: {
+    database: ':memory:',
+  },
+};
+
 describe('IsoStore', () => {
   it('set & get', async () => {
     const key = 'yolo';
     const value = { data: true };
-    const store = new Store({
-      ['node-js']: {
-        database: ':memory:',
-      },
-    });
+    const store = new Store(TEST_NODE_JS_OPTIONS);
     await store.init();
     await store.set(key, value);
     const result = await store.get<typeof value>(key);
