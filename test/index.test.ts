@@ -1,10 +1,7 @@
 import Store from '../src';
 
 export const TEST_NODE_JS_OPTIONS = {
-  // eslint-disable-next-line no-useless-computed-key
-  ['node-js']: {
-    database: ':memory:',
-  },
+  database: ':memory:',
 };
 
 describe('IsoStore', () => {

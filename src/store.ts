@@ -13,7 +13,7 @@ export class Store implements IStore {
   }
 
   public async init(): Promise<void> {
-    await this.storage.init();
+    return Promise.resolve();
   }
 
   public async set<T = any>(key: string, value: T): Promise<void> {
