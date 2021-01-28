@@ -59,6 +59,6 @@
     "trailingComma": "es5"
   },
   "dependencies": {
-    "keyvaluestorage": "^0.5.0"
+    "keyvaluestorage": "^0.7.0"
   }
 }

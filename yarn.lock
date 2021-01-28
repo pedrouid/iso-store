@@ -4931,10 +4931,10 @@ jsprim@^1.2.2:
     array-includes "^3.1.1"
     object.assign "^4.1.1"
 
-keyvaluestorage@^0.5.0:
-  version "0.5.0"
-  resolved "https://registry.yarnpkg.com/keyvaluestorage/-/keyvaluestorage-0.5.0.tgz#0c07395801ea9f20bbfca1a5874faa675b94bb7a"
-  integrity sha512-l1/V0sSLIJAJBko//LTfSn7wiNooanC3lcHK8Eug5KGl4O8WATqp+6BQZU4yzwH1EHW/YMmSeJ7fwbq1j/H5CA==
+keyvaluestorage@^0.7.0:
+  version "0.7.0"
+  resolved "https://registry.yarnpkg.com/keyvaluestorage/-/keyvaluestorage-0.7.0.tgz#d86cebc705dc742926b4e8b40656e0589cc16b37"
+  integrity sha512-dkyyQ4d7E/Xur2Eu+p/dIUskLhCYQVJZ8kOjqNWvfTmLhRwn2q8w93grd439ofJWIGimvAi+RBUTIxnUye5IMw==
   dependencies:
     better-sqlite3 "^7.1.2"
     localStorage "^1.0.4"
